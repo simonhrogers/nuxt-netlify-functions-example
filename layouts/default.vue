@@ -1,21 +1,11 @@
 <template>
   <ElContainer direction="vertical" class="Layout">
     <ElHeader height="auto">
-      <h1>nuxt-netlify-functions-example</h1>
-      <a
-        href="https://github.com/wearelucid/nuxt-netlify-functions-example"
-        target="_blank"
-      >
-        GitHub Repo
-      </a>
+      <h1>Inky Lab – Serverless Functions, Braintree Integration</h1>
     </ElHeader>
     <ElMain>
       <nuxt />
     </ElMain>
-    <ElFooter>
-      Created by
-      <a href="https://github.com/wearelucid" target="_blank">Lucid</a>
-    </ElFooter>
   </ElContainer>
 </template>
 

@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'BraintreeGetToken',
+  name: 'BraintreeCreateTransaction',
   data() {
     return {
       response: '—',
@@ -8,18 +8,7 @@ export default {
     }
   },
   methods: {
-    async helloWorld() {
-      try {
-        const res = await this.$axios.$get('/.netlify/functions/braintree-get-token')
-        this.response = res
-        console.log('Token:');
-        console.log(this.response);
-        this.error = null
-      } catch (e) {
-        this.error = e.response
-        this.response = '—'
-      }
-    }
+
   }
 }
 </script>

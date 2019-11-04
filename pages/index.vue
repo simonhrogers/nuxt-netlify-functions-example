@@ -24,23 +24,7 @@ export default {
 
 <template>
   <div>
-    <hr class="separator" />
-    <Example1 />
-    <hr class="separator" />
-    <Example2 />
-    <hr class="separator" />
-    <Example3 />
-    <hr class="separator" />
-    <Example4 />
-    <hr class="separator" />
-    <Example5 />
-    <hr class="separator" />
-    <Example6 />
-    <hr class="separator" />
-    <Example7 />
-    <hr class="separator" />
     <BraintreeGetToken />
-    <hr class="separator" />
   </div>
 </template>
 

@@ -8,7 +8,11 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { name: 'author', content: 'Lucid – wearelucid.ch' }
-    ]
+    ],
+    script: [
+      { src: 'https://js.braintreegateway.com/web/dropin/1.20.4/js/dropin.min.js' },
+      { src: 'http://code.jquery.com/jquery-3.2.1.min.js' }
+    ],
   },
 
   /*

@@ -2,12 +2,16 @@
   <div>
     <ElButton type="primary" @click="helloWorld()">BUY NOW!</ElButton>
     <p>Response: {{ response }}</p>
+
+    <hr class="separator" />
     <p>Vue Braintree:</p>
     <v-braintree v-if="response !== '—'" :token="response.token" :paypal="true" :url="'/.netlify/functions/braintree-create-transaction'"></v-braintree>
 
+    <!-- <hr class="separator" />
     <p>Payment:</p>
-    <Payment v-if="response !== '—'" :token="response.token" :paypal="true" :url="'/.netlify/functions/braintree-create-transaction'" />
+    <Payment v-if="response !== '—'" :token="response.token" :paypal="true" :url="'/.netlify/functions/braintree-create-transaction'" /> -->
 
+    <hr class="separator" />
     <p>DIY Payment:</p>
     <DIYPayment v-if="response !== '—'" :token="response.token" :paypal="true" :url="'/.netlify/functions/braintree-create-transaction'" />
   </div>
@@ -29,23 +33,6 @@ export default {
     async helloWorld() {
       try {
         const res = await this.$axios.$get('/.netlify/functions/braintree-get-token')
-        this.response = res
-        console.log('Token:');
-        console.log(this.response);
-        this.error = null
-      } catch (e) {
-        this.error = e.response
-        this.response = '—'
-      }
-    },
-    async createTransaction() {
-      try {
-        const res = await this.$axios.$post('/.netlify/functions/braintree-create-transaction', { "payment_method_nonce": "fake-valid-nonce", "amount": 10.0 }, {
-          headers: {
-            'Content-Type': 'application/json',
-            'Cache-Control': 'no-cache'
-          }
-        })
         this.response = res
         console.log('Token:');
         console.log(this.response);
