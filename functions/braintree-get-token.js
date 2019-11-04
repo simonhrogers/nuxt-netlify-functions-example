@@ -19,8 +19,7 @@ const gateway = braintree.connect({
   privateKey: process.env.BT_PRIVATE_KEY
 });
 
-export async function handler(event, context) {
-
+exports.handler = async (event, context) => {
   const response = await gateway.clientToken.generate();
 
   const clientToken = response.clientToken;
@@ -28,5 +27,5 @@ export async function handler(event, context) {
   return {
     statusCode: 200,
     body: JSON.stringify({ token: clientToken })
-  };
+  }
 }
