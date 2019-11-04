@@ -1,4 +1,4 @@
 import Vue from 'vue'
-import dropIn from 'braintree-web-drop-in'
+import DropIn from 'braintree-web-drop-in'
 
-Vue.use(dropIn)
+Vue.use(DropIn)
