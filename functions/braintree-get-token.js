@@ -1,4 +1,4 @@
-import gateway from '/gateway.js';
+import gateway from 'gateway.js';
 
 export async function handler(event, context) {
 
