@@ -1,5 +1,3 @@
-// import gateway from '/gateway.js';
-
 const braintree = require('braintree');
 require('dotenv').config();
 

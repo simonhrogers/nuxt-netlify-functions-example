@@ -19,6 +19,23 @@ export default {
         this.error = e.response
         this.response = '—'
       }
+    },
+    async createTransaction() {
+      try {
+        const res = await this.$axios.$post('/.netlify/functions/braintree-create-transaction', { "payment_method_nonce": "fake-valid-nonce", "amount": 10.0 }, {
+          headers: {
+            'Content-Type': 'application/json',
+            'Cache-Control': 'no-cache'
+          }
+        })
+        this.response = res
+        console.log('Token:');
+        console.log(this.response);
+        this.error = null
+      } catch (e) {
+        this.error = e.response
+        this.response = '—'
+      }
     }
   }
 }
@@ -35,6 +52,6 @@ export default {
       {{ error.data }}
     </p>
     <p>Braintree Form:</p>
-    <v-braintree v-if="response !== '—'" :token="response.token" :paypal="true"></v-braintree>
+    <v-braintree v-if="response !== '—'" :token="response.token" :paypal="true" :url="'/.netlify/functions/braintree-create-transaction'"></v-braintree>
   </div>
 </template>
