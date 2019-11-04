@@ -35,6 +35,6 @@ export default {
       {{ error.data }}
     </p>
     <p>Braintree Form:</p>
-    <v-braintree v-if="response" :token="response.token" :paypal="true"></v-braintree>
+    <v-braintree v-if="response !== '—'" :token="response.token" :paypal="true"></v-braintree>
   </div>
 </template>
