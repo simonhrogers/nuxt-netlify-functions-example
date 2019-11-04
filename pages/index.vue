@@ -6,6 +6,7 @@ import Example4 from '@/components/Example4'
 import Example5 from '@/components/Example5'
 import Example6 from '@/components/Example6'
 import Example7 from '@/components/Example7'
+import BraintreeGetToken from '@/components/BraintreeGetToken'
 
 export default {
   components: {
@@ -15,7 +16,8 @@ export default {
     Example4,
     Example5,
     Example6,
-    Example7
+    Example7,
+    BraintreeGetToken
   }
 }
 </script>
@@ -36,6 +38,8 @@ export default {
     <Example6 />
     <hr class="separator" />
     <Example7 />
+    <hr class="separator" />
+    <BraintreeGetToken />
     <hr class="separator" />
   </div>
 </template>
