@@ -1,6 +1,20 @@
+<template>
+  <div>
+    <ElButton type="primary" @click="helloWorld()">BUY NOW!</ElButton>
+    <p>Response: {{ response }}</p>
+    <p>Vue Braintree:</p>
+    <v-braintree v-if="response !== '—'" :token="response.token" :paypal="true" :url="'/.netlify/functions/braintree-create-transaction'"></v-braintree>
+
+    <p>Locally:</p>
+    <Payment />
+  </div>
+</template>
+
 <script>
+import Payment from '@/components/Payment'
 export default {
   name: 'BraintreeGetToken',
+  components: { Payment },
   data() {
     return {
       response: '—',
@@ -40,18 +54,3 @@ export default {
   }
 }
 </script>
-
-<template>
-  <div>
-    <h2>8. Braintree, Get Token</h2>
-    <ElButton type="primary" @click="helloWorld()">Get Token</ElButton>
-    <p>Response: {{ response }}</p>
-    <p v-if="error" style="color:red;">
-      <strong>Error {{ error.status }}</strong>
-      <br />
-      {{ error.data }}
-    </p>
-    <p>Braintree Form:</p>
-    <v-braintree v-if="response !== '—'" :token="response.token" :paypal="true" :url="'/.netlify/functions/braintree-create-transaction'"></v-braintree>
-  </div>
-</template>
