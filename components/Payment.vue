@@ -54,7 +54,7 @@
         }
       }
       // Create dropin
-      this.DropIn.create(config, function (createErr, instance) {
+      DropIn.create(config, function (createErr, instance) {
         vm.$emit('loaded')
         vm.$refs.submit.addEventListener('click', function () {
           if (! vm.loading && ! vm.disabled) {
