@@ -26,6 +26,7 @@ export default {
   plugins: [
     { src: '~/plugins/element-ui.js' },
     { src: '~plugins/vueBraintree', ssr: false },
+    { src: '~plugins/braintreeWebDropIn', ssr: false },
   ],
 
   /*

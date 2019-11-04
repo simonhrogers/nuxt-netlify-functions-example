@@ -6,8 +6,6 @@
 </template>
 
 <script>
-  import dropIn from 'braintree-web-drop-in'
-  import axios from 'axios'
   export default {
     props: {
       token: {
@@ -79,7 +77,7 @@
     },
     methods: {
       pay (nonce) {
-        axios.post(this.url, {nonce: nonce})
+        this.$axios.post(this.url, {nonce: nonce})
         .then(response => {
           this.$emit('success')
           this.loading = false
