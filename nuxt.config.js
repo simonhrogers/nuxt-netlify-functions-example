@@ -7,7 +7,6 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-
       { name: 'author', content: 'Lucid – wearelucid.ch' }
     ]
   },
@@ -24,7 +23,10 @@ export default {
   /*
    ** Plugins
    */
-  plugins: [{ src: '~/plugins/element-ui.js' }],
+  plugins: [
+    { src: '~/plugins/element-ui.js' },
+    { src: '~plugins/vueBraintree', ssr: false },
+  ],
 
   /*
    ** Nuxt.js dev-modules
