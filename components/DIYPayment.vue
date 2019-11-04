@@ -8,7 +8,32 @@
 
 <script>
   export default {
-    props: [ token ],
+    props: {
+      token: {
+        required: true,
+        type: String
+      },
+      locale: {
+        type: String,
+        default: 'en_US'
+      },
+      url: {
+        type: String,
+        default: '/pay'
+      },
+      btnText: {
+        type: String,
+        default: 'Pay'
+      },
+      btnClass: {
+        type: String,
+        default: 'btn btn-primary'
+      },
+      paypal: {
+        type: Boolean,
+        default: false
+      }
+    },
     data() {
       return {
         button: ''
