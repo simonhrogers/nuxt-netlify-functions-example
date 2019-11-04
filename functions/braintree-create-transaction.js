@@ -1,4 +1,4 @@
-// import gateway from '/gateway.js';
+import gateway from '/gateway.js';
 
 const statusCodeOk = 200;
 const headers = {
