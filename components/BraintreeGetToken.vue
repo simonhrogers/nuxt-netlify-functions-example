@@ -5,16 +5,20 @@
     <p>Vue Braintree:</p>
     <v-braintree v-if="response !== '—'" :token="response.token" :paypal="true" :url="'/.netlify/functions/braintree-create-transaction'"></v-braintree>
 
-    <p>Locally:</p>
+    <p>Payment:</p>
     <Payment v-if="response !== '—'" :token="response.token" :paypal="true" :url="'/.netlify/functions/braintree-create-transaction'" />
+
+    <p>DIY Payment:</p>
+    <DIYPayment v-if="response !== '—'" :token="response.token" :paypal="true" :url="'/.netlify/functions/braintree-create-transaction'" />
   </div>
 </template>
 
 <script>
 import Payment from '@/components/Payment'
+import DIYPayment from '@/components/DIYPayment'
 export default {
   name: 'BraintreeGetToken',
-  components: { Payment },
+  components: { Payment, DIYPayment },
   data() {
     return {
       response: '—',
