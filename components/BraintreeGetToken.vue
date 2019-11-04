@@ -6,7 +6,7 @@
     <v-braintree v-if="response !== '—'" :token="response.token" :paypal="true" :url="'/.netlify/functions/braintree-create-transaction'"></v-braintree>
 
     <p>Locally:</p>
-    <Payment />
+    <Payment v-if="response !== '—'" :token="response.token" :paypal="true" :url="'/.netlify/functions/braintree-create-transaction'" />
   </div>
 </template>
 
