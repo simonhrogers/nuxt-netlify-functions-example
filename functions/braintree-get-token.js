@@ -3,20 +3,20 @@
 const braintree = require('braintree');
 require('dotenv').config();
 
-// const {
-//   BT_ENVIRONMENT,
-//   BT_MERCHANT_ID,
-//   BT_PUBLIC_KEY,
-//   BT_PRIVATE_KEY
-// } = process.env;
+const {
+  BT_ENVIRONMENT,
+  BT_MERCHANT_ID,
+  BT_PUBLIC_KEY,
+  BT_PRIVATE_KEY
+} = process.env;
 
-const environment = process.env.BT_ENVIRONMENT.charAt(0).toUpperCase() + BT_ENVIRONMENT.slice(1);
+const environment = BT_ENVIRONMENT.charAt(0).toUpperCase() + BT_ENVIRONMENT.slice(1);
 
 const gateway = braintree.connect({
   environment: braintree.Environment[environment],
-  merchantId: process.env.BT_MERCHANT_ID,
-  publicKey: process.env.BT_PUBLIC_KEY,
-  privateKey: process.env.BT_PRIVATE_KEY
+  merchantId: BT_MERCHANT_ID,
+  publicKey: BT_PUBLIC_KEY,
+  privateKey: BT_PRIVATE_KEY
 });
 
 exports.handler = async (event, context) => {
