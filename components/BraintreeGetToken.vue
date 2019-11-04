@@ -3,7 +3,6 @@ export default {
   name: 'BraintreeGetToken',
   data() {
     return {
-      response: '—',
       error: null
     }
   },
