@@ -1,6 +1,6 @@
 // import gateway from '/gateway.js';
 
-import { connect, Environment } from 'braintree';
+import braintree from 'braintree';
 require('dotenv').config();
 
 const {
@@ -13,8 +13,8 @@ const {
 const environment =
   BT_ENVIRONMENT.charAt(0).toUpperCase() + BT_ENVIRONMENT.slice(1);
 
-const gateway = connect({
-  environment: Environment[environment],
+const gateway = braintree.connect({
+  environment: braintree.Environment[environment],
   merchantId: BT_MERCHANT_ID,
   publicKey: BT_PUBLIC_KEY,
   privateKey: BT_PRIVATE_KEY
